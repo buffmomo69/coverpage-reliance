@@ -1,0 +1,88 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reliance College</title>
+  <!-- Include Tailwind CSS stylesheet -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Include Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" rel="stylesheet">
+  <style>
+    /* Apply the Times New Roman font to relevant elements */
+    body {
+      font-family: 'Times Newer Roman', serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Times Newer Roman', serif;
+    }
+
+    /* Set A4 size for printing */
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    /* Set A4 size for display */
+    @media print {
+
+      html,
+      body {
+        width: 210mm;
+        height: 297mm;
+      }
+
+      body {
+        margin: 1cm;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mx-auto text-center mt-4">
+    <img src="{% static 'images/reliance.png' %}" alt="Reliance College" class="w-40 mx-auto">
+    <div class="mt-8">
+      <h1 class="text-4xl font-bold">RELIANCE COLLEGE</h1>
+      <h2 class="text-lg font-bold">Chabahil, Kathmandu</h2>
+      <p>[Affiliated to TU]</p>
+    </div>
+    <div class="flex justify-center items-center mt-8">
+      <!-- Replace the CSS-generated lines with the "middlelines.png" image -->
+      <img src="{% static 'images/lines.svg' %}" alt="Middle Lines" class="mx-auto" width="" height="">
+    </div>
+    <div class="mt-8">
+      <h3 class="text-2xl">Lab Reports of</h3>
+      <h4 class="text-xl font-bold">'{{subject}}'</h4>
+    </div>
+    <div class="grid grid-cols-2 gap-x-8 mt-16">
+      <div class="text-left">
+        <p class="font-bold">Submitted By:</p>
+        <p>Name: {{name}}</p>
+        <p>Semester: {{semester}}</p>
+        <p>Program: {{program}}</p>
+        <p>Registration No: {{registernumber}}</p>
+      </div>
+      <div class="text-right">
+        <p class="font-bold">Submitted To:</p>
+        <p>{{teachersname}}</p>
+        <p>Lecturer/Faculty Member</p>
+        <p>{{department}} Department</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
